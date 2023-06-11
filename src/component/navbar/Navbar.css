@@ -1,0 +1,80 @@
+/* CSS for the Navbar component */
+
+
+header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin: 1rem;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 10px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .user-actions button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .search-bar {
+      flex: 1;
+    }
+  
+    .search-bar input {
+      width: 100%;
+    }
+  
+    .user-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .user-actions button {
+      margin-top: 10px;
+    }
+  }
+  

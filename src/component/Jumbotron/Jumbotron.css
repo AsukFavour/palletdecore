@@ -1,0 +1,56 @@
+.jumbotron {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-image: url('../../assets/couch.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .content {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .title {
+    font-family: 'Your Classy Font', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #222121;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-family: 'Your Classy Font', sans-serif;
+    font-size: 18px;
+    color: #222121;
+    margin: 10px 0;
+  }
+  
+  .link {
+    font-family: 'Your Classy Font', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 24px;
+    }
+  
+    .subtitle {
+      font-size: 14px;
+    }
+  
+    .link {
+      font-size: 18px;
+      padding: 8px 16px;
+    }
+  }
+  
