@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../navbar/navbar';
+import Navbar from '../TopNavbar/TopNavbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import Info from '../Info/Info';
 import Cards from '../Card/Cards';
