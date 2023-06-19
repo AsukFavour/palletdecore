@@ -11,9 +11,12 @@
   }
   
   .special-header img {
-    max-width: 80%;
+    max-width: 90%;
     height: 450px;
-    margin: 0 2rem;
+    margin: 0 0 0 7px;
+    padding: 0 10px ;
+    justify-content: center;
+    align-items: center ;
   }
   
   .special-content {
@@ -41,9 +44,6 @@
       margin-top: 20%;
     }
 
-    .special-header img{
-        margin: 0 2rem;
-    }
   }
   
   /* Laptop/desktop styles */

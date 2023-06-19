@@ -30,7 +30,7 @@
   }
   
   .formInput {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -60,6 +60,11 @@
   }
   
   @media (max-width: 768px) {
+    .auth-container {
+
+        height: auto;
+      }
+
     .auth-form {
       max-width: 300px;
     }
