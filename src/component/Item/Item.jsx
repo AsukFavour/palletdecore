@@ -1,11 +1,14 @@
+// Item.js
 import React, { useState } from 'react';
 import './Item.css';
 import Navbar from '../TopNavbar/TopNavbar';
 import Footer from '../Footer/Footer';
 import image from '../../assets/sofa.png';
+import { Link } from 'react-router-dom';
 
 const Item = () => {
   const [showDetails, setShowDetails] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   const toggleDetails = () => {
@@ -13,9 +16,10 @@ const Item = () => {
   };
 
   const addToCart = () => {
+    setShowModal(true);
     const item = {
       image,
-      name: 'France DE\' LA CAPLLE CHAIR',
+      name: "France DE' LA CAPLLE CHAIR",
       price: 70000,
       quantity,
     };
@@ -23,6 +27,10 @@ const Item = () => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.push(item);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   const youMightLikeData = [
@@ -105,6 +113,24 @@ const Item = () => {
           ))}
         </div>
       </div>
+      {showModal && (
+        <div className="modal">
+          <div className="dialog">
+            <div className="dialog-content">
+              <h3>Item added to cart</h3>
+              <img src={image} alt="Item" className="dialog-image" />
+              <p className="dialog-name">France DE' LA CAPLLE CHAIR</p>
+              <div className="dialog-buttons">
+                <button className="dialog-button"> <Link to={'/cart'}>View Cart</Link></button>
+                <button className="dialog-button">Checkout</button>
+                <button className="dialog-button" onClick={closeModal}>
+                  Continue Shopping
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </>
   );

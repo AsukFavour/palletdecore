@@ -2,6 +2,7 @@
 .special {
     display: flex;
     flex-direction: column-reverse;
+    font-family: 'Raleway', sans-serif;
   }
   
   .special-header {

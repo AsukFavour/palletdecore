@@ -1,19 +1,27 @@
 .product-list {
     display: flex;
     flex-direction: column;
-    
     padding: 20px;
+    font-family: 'Raleway', sans-serif;
   }
   
   .filter-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
   }
   
-  .filter-options {
-    margin-right: 10px;
+  .filter-options select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
   }
+  
   
   .product-link {
     text-decoration: none;

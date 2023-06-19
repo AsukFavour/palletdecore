@@ -5,6 +5,7 @@
     background-image: url('../../assets/couch.png');
     background-size: cover;
     background-position: center;
+    font-family: 'Raleway', sans-serif;
   }
   
   .content {

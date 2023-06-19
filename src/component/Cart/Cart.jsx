@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Cart.css';
 import Navbar from '../TopNavbar/TopNavbar';
 import Footer from '../Footer/Footer';
+import { FiTrash } from 'react-icons/fi';
+
 
 const Cart = () => {
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -54,7 +56,7 @@ const Cart = () => {
                   <td>{item.quantity}</td>
                   <td>${item.price * item.quantity}</td>
                   <td>
-                    <button onClick={() => handleDeleteItem(index)}>Delete</button>
+                    <button onClick={() => handleDeleteItem(index)}><FiTrash className='icon'/></button>
                   </td>
                 </tr>
               ))}

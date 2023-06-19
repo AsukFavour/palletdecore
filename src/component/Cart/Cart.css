@@ -3,6 +3,7 @@
   padding: 20px;
   background-color: #f1f1f1;
   border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
 }
 
 h2 {
@@ -30,6 +31,20 @@ th {
   font-weight: bold;
 }
 
+td button {
+  border: none;
+  cursor: pointer;
+}
+
+td button .icon{
+  width: 1.2rem;
+  height: auto;
+}
+
+.icon:hover{
+  color: red;
+}
+
 .cart-item-image {
   max-width: 50px;
   max-height: 50px;
@@ -43,7 +58,7 @@ th {
 .checkout-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4caf50;
+  background-color: #e67e22;
   color: #fff;
   border: none;
   border-radius: 5px;

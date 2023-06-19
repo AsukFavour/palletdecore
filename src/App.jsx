@@ -5,6 +5,7 @@ import Cart from "./component/Cart/Cart";
 import Item from "./component/Item/Item";
 import ContactUs from "./component/Contact/ContactUs";
 import ProductList from "./component/ProductList/ProductList";
+import AuthForm from "./component/AuthForm/AuthForm";
 
 function App() {
   
@@ -14,6 +15,9 @@ function App() {
     <Routes>
     <Route path="/" element={
           <Index/>
+        }/>
+    <Route path="/login" element={
+          <AuthForm/>
         }/>
     <Route path="/about" element={
           <About/>
