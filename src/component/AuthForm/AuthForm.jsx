@@ -31,27 +31,27 @@ const AuthForm = () => {
         {!isLogin && (
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required />
+            <input type="text" id="firstName" name="firstName" required  className='formInput'/>
           </div>
         )}
         {!isLogin && (
           <div className="form-group">
             <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required />
+            <input type="text" id="lastName" name="lastName" required className='formInput'/>
           </div>
         )}
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required className='formInput'/>
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" required className='formInput'/>
         </div>
         {!isLogin && (
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required />
+            <input type="password" id="confirmPassword" name="confirmPassword" required className='formInput'/>
           </div>
         )}
         <div className="form-group">

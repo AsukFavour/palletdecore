@@ -74,7 +74,7 @@ function Navbar() {
           <Link to={"/contact"} className="navbar__link">
             Contact Us
           </Link>
-          <div className="user-actions">
+          <div className="user-actions navbar__link">
             <Link to={"/login"} className="button">
               Login
             </Link>
