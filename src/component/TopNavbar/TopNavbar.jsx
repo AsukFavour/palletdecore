@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./TopNavbar.css";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { FaBars, FaTimes, FaSearch, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productDropdownOpen, setProductDropdownOpen] = useState(false);
+  const [innerDropdownOpen, setInnerDropdownOpen] = useState(false);
 
   function handleMenuToggle() {
     setMenuOpen(!menuOpen);
@@ -13,6 +14,10 @@ function Navbar() {
 
   function handleProductDropdownToggle() {
     setProductDropdownOpen(!productDropdownOpen);
+  }
+
+  function handleInnerDropdownToggle() {
+    setInnerDropdownOpen(!innerDropdownOpen);
   }
 
   return (
@@ -31,19 +36,19 @@ function Navbar() {
           </button>
         </div>
         <div className="centered-links">
-        <Link to={"/"} className="navbar__link">
+          <Link to={"/"} className="navbar__link">
             Home
           </Link>
           <div className="navbar__dropdown">
             <Link
-              
-              className="navbar__link navbar__link--dropdown"
-              onClick={handleProductDropdownToggle}
+              className={`navbar__link navbar__link--dropdown ${innerDropdownOpen ? "navbar__link--active" : ""}`}
+              onClick={handleInnerDropdownToggle}
             >
               Product
+              {innerDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
             </Link>
-            {productDropdownOpen && (
-              <div className="navbar__dropdown-content">
+            {innerDropdownOpen && (
+              <div className="navbar__inner-dropdown-content">
                 <Link to={"/product"} className="navbar__dropdown-item">
                   All Products
                 </Link>

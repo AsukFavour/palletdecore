@@ -59,7 +59,7 @@ const AuthForm = () => {
             <FaGoogle className="social-icon google" />
             <FaFacebook className="social-icon facebook" />
             <FaApple className="social-icon apple" />
-            <FaMicrosoft className="social-icon microsoft" />
+            {/* <FaMicrosoft className="social-icon microsoft" /> */}
           </div>
         </div>
         <div className="form-group">

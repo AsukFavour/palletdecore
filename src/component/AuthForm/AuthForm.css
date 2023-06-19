@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f7f7f7;
   }
   
   .auth-form {
@@ -10,8 +11,6 @@
     width: 100%;
     padding: 20px;
     background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   
   .auth-form h2 {
@@ -21,12 +20,6 @@
   
   .form-group {
     margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
   }
   
   .formInput {
@@ -59,6 +52,13 @@
     cursor: pointer;
   }
   
+  .google{
+    color: red;
+  }
+
+  .facebook{
+    color: blue;
+  }
   @media (max-width: 768px) {
     .auth-container {
 
