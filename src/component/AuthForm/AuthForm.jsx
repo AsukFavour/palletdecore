@@ -30,28 +30,24 @@ const AuthForm = () => {
         <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
         {!isLogin && (
           <div className="form-group">
-            <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required  className='formInput'/>
+            <input type="text" id="firstName" name="firstName" placeholder='First Name' required  className='formInput'/>
           </div>
         )}
         {!isLogin && (
           <div className="form-group">
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required className='formInput'/>
+            <input type="text" id="lastName" name="lastName" placeholder='Last Name' required className='formInput'/>
           </div>
         )}
         <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required className='formInput'/>
+
+          <input type="email" id="email" name="email" placeholder='Email' required className='formInput'/>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" required className='formInput'/>
+          <input type="password" id="password" name="password" placeholder='Password' required className='formInput'/>
         </div>
         {!isLogin && (
           <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required className='formInput'/>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder='Confirm Password' required className='formInput'/>
           </div>
         )}
         <div className="form-group">
