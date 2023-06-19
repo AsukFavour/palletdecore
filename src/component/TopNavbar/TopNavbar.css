@@ -21,6 +21,7 @@
 
 .navbar__toggle {
   display: none;
+  color: #000;
 }
 
 .search-container {
