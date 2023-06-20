@@ -1,6 +1,8 @@
 import React from 'react';
 import './Cards.css';
 import image from '../../assets/sofa.png';
+import { Link } from 'react-router-dom';
+
 
 const photoData = [
   {
@@ -23,11 +25,13 @@ const photoData = [
 function PhotoCard() {
   return (
     <div className="photo-card-container">
+      
       {photoData.map((item) => (
+        <Link key={''} to={''}>
         <div key={item.id} className="photo-card">
           <img src={item.image} alt={item.name} className="photo-card-image" />
           <p className="photo-card-name">{item.name}</p>
-        </div>
+        </div></Link>
       ))}
     </div>
   );

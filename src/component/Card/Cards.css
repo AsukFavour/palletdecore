@@ -15,6 +15,11 @@
 .photo-card-image {
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.photo-card-image:hover{
+  transform: scale(1.02);
 }
 
 .photo-card-name {
@@ -22,6 +27,7 @@
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 @media screen and (max-width: 768px) {

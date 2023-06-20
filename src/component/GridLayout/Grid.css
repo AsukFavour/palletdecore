@@ -10,6 +10,8 @@
     box-sizing: border-box;
     margin-bottom: 20px;
     text-decoration: none;
+    color: black;
+    cursor: pointer;
   }
   
   .grid-item-large {
@@ -24,6 +26,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .grid-item img:hover{
+    transform: scale(1.02);
   }
   
   .image-text {
