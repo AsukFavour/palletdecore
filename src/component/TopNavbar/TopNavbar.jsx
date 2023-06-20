@@ -5,16 +5,14 @@ import { FaBars, FaTimes, FaSearch, FaChevronDown, FaChevronUp } from "react-ico
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productDropdownOpen, setProductDropdownOpen] = useState(false);
   const [innerDropdownOpen, setInnerDropdownOpen] = useState(false);
 
   function handleMenuToggle() {
     setMenuOpen(!menuOpen);
+    setInnerDropdownOpen(false);
   }
 
-  function handleProductDropdownToggle() {
-    setProductDropdownOpen(!productDropdownOpen);
-  }
+ 
 
   function handleInnerDropdownToggle() {
     setInnerDropdownOpen(!innerDropdownOpen);

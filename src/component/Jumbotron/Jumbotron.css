@@ -15,16 +15,16 @@
   }
   
   .title {
-    font-family: 'Your Classy Font', sans-serif;
-    font-size: 36px;
-    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
     color: #222121;
     margin: 0;
   }
   
   .subtitle {
-    font-family: 'Your Classy Font', sans-serif;
-    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
     color: #222121;
     margin: 10px 0;
   }
@@ -42,11 +42,13 @@
   /* Media Queries */
   @media screen and (max-width: 768px) {
     .title {
-      font-size: 24px;
+      font-size: 40px;
+      font-weight: 800;
     }
   
     .subtitle {
-      font-size: 14px;
+      font-size: 20px;
+      font-weight: bold;
     }
   
     .link {
