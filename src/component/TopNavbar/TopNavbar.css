@@ -62,7 +62,7 @@
 }
 
 .navbar__link:hover {
-  color: #007bff;
+  color: darkorange;
 }
 
 .user-actions .button {
@@ -199,7 +199,7 @@
   }
 
   .search-button:hover {
-    color: #007bff;
+    color: darkorange;
   }
 
   .navbar__dropdown {
@@ -239,6 +239,6 @@
   }
 
   .navbar__dropdown-item:hover {
-    color: #007bff;
+    color: darkorange;
   }
 }

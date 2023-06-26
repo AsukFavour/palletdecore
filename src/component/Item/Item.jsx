@@ -105,8 +105,8 @@ const Item = () => {
               <img src={item.image} alt={item.name} className="card-image" />
               <div className="card-overlay">
                 <div className="card-details">
-                  <p className="card-name">{item.name}</p>
-                  <p className="card-price">{`$${item.price}`}</p>
+                  {/* <p className="card-name">{item.name}</p> */}
+                  {/* <p className="card-price">{`$${item.price}`}</p> */}
                 </div>
               </div>
             </div>

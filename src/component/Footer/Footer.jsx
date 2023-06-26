@@ -10,16 +10,13 @@ const Footer = () => {
         <h3 className="footer-section-title">Customer Care</h3>
         <ul className="footer-links">
           <li>
-            <a href="#">Link 1</a>
+            <a href="#">Customer@pallet.com</a>
           </li>
           <li>
-            <a href="#">Link 2</a>
+            <a href="#">Customer@pallet.com</a>
           </li>
           <li>
-            <a href="#">Link 3</a>
-          </li>
-          <li>
-            <a href="#">Link 4</a>
+            <Link to={"/shipping"}>Shipping</Link>
           </li>
         </ul>
       </div>
@@ -33,9 +30,6 @@ const Footer = () => {
             <a href="#">Our Team</a>
           </li>
           <li>
-            <a href="#">Careers</a>
-          </li>
-          <li>
             <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
@@ -44,13 +38,10 @@ const Footer = () => {
         <h3 className="footer-section-title">Ways to Shop</h3>
         <ul className="footer-links">
           <li>
-            <a href="#">Online</a>
+            <Link to={"/Online"}>Online</Link>
           </li>
           <li>
-            <a href="#">In-Store</a>
-          </li>
-          <li>
-            <a href="#">Mobile App</a>
+            <Link to={"/contact"}>In Store</Link>
           </li>
         </ul>
       </div>
