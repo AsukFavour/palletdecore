@@ -74,6 +74,11 @@
     cursor: pointer;
     margin: 3px;
   }
+
+  .pay-button a{
+    text-decoration: none;
+    color: #fff;
+  }
   
   .item-details-section {
     margin-top: 20px;

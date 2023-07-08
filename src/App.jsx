@@ -6,6 +6,8 @@ import Item from "./component/Item/Item";
 import ContactUs from "./component/Contact/ContactUs";
 import ProductList from "./component/ProductList/ProductList";
 import AuthForm from "./component/AuthForm/AuthForm";
+import Checkout from "./component/Checkout/Checkout";
+
 
 function App() {
   
@@ -33,6 +35,9 @@ function App() {
         }/>
       <Route path="/product" element={
           <ProductList/>
+        }/>
+              <Route path="/checkout" element={
+          <Checkout/>
         }/>
     </Routes>
    </Router>

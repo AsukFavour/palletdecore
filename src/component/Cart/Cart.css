@@ -32,12 +32,12 @@ th {
   font-weight: bold;
 }
 
-td button {
+td a {
   border: none;
   cursor: pointer;
 }
 
-td button .icon{
+td a .icon{
   width: 1.2rem;
   height: auto;
 }
@@ -64,6 +64,7 @@ td button .icon{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .modal {

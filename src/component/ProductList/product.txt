@@ -1,0 +1,95 @@
+import React, { useState, useEffect } from 'react';
+import './ProductList.css';
+import { Link } from 'react-router-dom';
+import Navbar from '../TopNavbar/TopNavbar';
+import Footer from '../Footer/Footer';
+import axios from 'axios';
+
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+  const [categoryFilter, setCategoryFilter] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 12;
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    // Fetch products from backend using Axios
+    axios.get('/api/products')
+      .then(response => {
+        setProducts(response.data);
+        const totalPagesCount = Math.ceil(response.data.length / productsPerPage);
+        setTotalPages(totalPagesCount);
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+  }, []);
+
+  const handleCategoryChange = e => {
+    setCategoryFilter(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = page => setCurrentPage(page);
+
+  const filteredProducts = categoryFilter === 'All'
+    ? products
+    : products.filter(product => product.category === categoryFilter);
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  return (
+    <>
+      <Navbar />
+      <div className="product-list">
+        <p>
+          <Link to={'/'}>home </Link>/Product
+        </p>
+
+        <div className="filter-container">
+          <div className="filter-options">
+            <select value={categoryFilter} onChange={handleCategoryChange}>
+              <option value="All">All</option>
+              <option value="Chair">Chairs</option>
+              <option value="Table">Tables</option>
+              <option value="Bed">Beds</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="product-cards">
+          {currentProducts.map(product => (
+            <Link to={`/item/${product.id}`} key={product.id} className="product-link">
+              <div className="product-card">
+                <div className="product-image">
+                  <img src={product.images} alt="Product" />
+                </div>
+                <div className="product-info">
+                  <h3 className="product-name">{product.name}</h3>
+                  <p className="product-price">{product.price}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="pagination">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+            <button
+              key={page}
+              className={`page-button ${currentPage === page ? 'active' : ''}`}
+              onClick={() => handlePageChange(page)}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default ProductList;

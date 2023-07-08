@@ -84,7 +84,7 @@ const Item = () => {
             <button className="add-to-cart-button" onClick={addToCart}>
               Add to Cart
             </button>
-            <button className="pay-button">Pay</button>
+            <button className="pay-button"><Link to={'/checkout'}>Check out</Link></button>
             <button className="details-toggle-button" onClick={toggleDetails}>
               {showDetails ? 'Hide Details' : 'Show Details'}
             </button>
@@ -122,7 +122,7 @@ const Item = () => {
               <p className="dialog-name">France DE' LA CAPLLE CHAIR</p>
               <div className="dialog-buttons">
                 <button className="dialog-button"> <Link to={'/cart'}>View Cart</Link></button>
-                <button className="dialog-button">Checkout</button>
+                <button className="dialog-button"><Link to={'/checkout'}>Check out</Link></button>
                 <button className="dialog-button" onClick={closeModal}>
                   Continue Shopping
                 </button>

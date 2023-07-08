@@ -3,6 +3,7 @@ import './Cart.css';
 import Navbar from '../TopNavbar/TopNavbar';
 import Footer from '../Footer/Footer';
 import { FiTrash } from 'react-icons/fi';
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -64,7 +65,7 @@ const Cart = () => {
           </table>
         </div>
         <div className="cart-total">Total: ${totalPrice}</div>
-        <button className="checkout-button">Checkout</button>
+        <Link to={"/checkout"} className="checkout-button">Checkout </Link>
         {showModal && (
           <div className="modal">
             <div className="modal-content">
