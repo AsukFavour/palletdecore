@@ -8,17 +8,17 @@ const photoData = [
   {
     id: 1,
     image: image,
-    name: 'Item 1',
+    name: 'Accent chair',
   },
   {
     id: 2,
     image: image,
-    name: 'Item 2',
+    name: 'Lounges',
   },
   {
     id: 3,
     image: image,
-    name: 'Item 3',
+    name: 'Accent tables',
   },
 ];
 

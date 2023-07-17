@@ -10,38 +10,20 @@ import Checkout from "./component/Checkout/Checkout";
 
 
 function App() {
-  
-
   return (
-   <Router>
-    <Routes>
-    <Route path="/" element={
-          <Index/>
-        }/>
-    <Route path="/login" element={
-          <AuthForm/>
-        }/>
-    <Route path="/about" element={
-          <About/>
-        }/>
-    <Route path="/cart" element={
-          <Cart/>
-        }/>
-    <Route path="/item" element={
-          <Item/>
-        }/>
-     <Route path="/contact" element={
-          <ContactUs/>
-        }/>
-      <Route path="/product" element={
-          <ProductList/>
-        }/>
-              <Route path="/checkout" element={
-          <Checkout/>
-        }/>
-    </Routes>
-   </Router>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/login" element={<AuthForm />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/All Category" element={<ProductList />} />
+        <Route path="/item/:id" element={<Item />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

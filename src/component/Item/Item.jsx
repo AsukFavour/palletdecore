@@ -1,32 +1,19 @@
 // Item.js
-import React, { useState } from 'react';
-import './Item.css';
-import Navbar from '../TopNavbar/TopNavbar';
-import Footer from '../Footer/Footer';
-import image from '../../assets/sofa.png';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import "./Item.css";
+import Navbar from "../TopNavbar/TopNavbar";
+import Footer from "../Footer/Footer";
+import image from "../../assets/sofa.png";
+import { Link, useParams } from "react-router-dom";
 
 const Item = () => {
+  const { id } = useParams();
   const [showDetails, setShowDetails] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
-  };
-
-  const addToCart = () => {
-    setShowModal(true);
-    const item = {
-      image,
-      name: "France DE' LA CAPLLE CHAIR",
-      price: 70000,
-      quantity,
-    };
-
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    cartItems.push(item);
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
   };
 
   const closeModal = () => {
@@ -37,28 +24,57 @@ const Item = () => {
     {
       id: 1,
       image: image,
-      name: 'Chair',
+      name: "Chair",
       price: 200,
     },
     {
       id: 2,
       image: image,
-      name: 'Table',
+      name: "Table",
       price: 500,
     },
     {
       id: 3,
       image: image,
-      name: 'Lamp',
+      name: "Lamp",
       price: 80,
     },
     {
       id: 4,
       image: image,
-      name: 'Shelf',
+      name: "Shelf",
+      price: 300,
+    },
+    {
+      id: 5,
+      image: image,
+      name: "Storage",
       price: 300,
     },
   ];
+
+  // Find the selected item by id
+  const selectedItem = youMightLikeData.find(
+    (item) => item.id === parseInt(id)
+  );
+
+  if (!selectedItem) {
+    return <div>Item not found</div>;
+  }
+
+  const addToCart = () => {
+    setShowModal(true);
+    const item = {
+      image: selectedItem.image,
+      name: selectedItem.name,
+      price: selectedItem.price,
+      quantity,
+    };
+
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    cartItems.push(item);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
 
   return (
     <>
@@ -68,8 +84,8 @@ const Item = () => {
           <img src={image} alt="Item" />
         </div>
         <div className="item-details">
-          <h1 className="item-name">France DE' LA CAPLLE CHAIR</h1>
-          <p className="item-description">$70,000 USD</p>
+          <h1 className="item-name">{selectedItem.name}</h1>
+          <p className="item-description">{`$${selectedItem.price} USD`}</p>
           <p className="item-description">Item Description</p>
           <div className="item-quantity">
             <input
@@ -84,9 +100,11 @@ const Item = () => {
             <button className="add-to-cart-button" onClick={addToCart}>
               Add to Cart
             </button>
-            <button className="pay-button"><Link to={'/checkout'}>Check out</Link></button>
+            <button className="pay-button">
+              <Link to={"/checkout"}>Check out</Link>
+            </button>
             <button className="details-toggle-button" onClick={toggleDetails}>
-              {showDetails ? 'Hide Details' : 'Show Details'}
+              {showDetails ? "Hide Details" : "Show Details"}
             </button>
           </div>
           {showDetails && (
@@ -119,10 +137,14 @@ const Item = () => {
             <div className="dialog-content">
               <h3>Item added to cart</h3>
               <img src={image} alt="Item" className="dialog-image" />
-              <p className="dialog-name">France DE' LA CAPLLE CHAIR</p>
+              <p className="dialog-name">{selectedItem.name}</p>
               <div className="dialog-buttons">
-                <button className="dialog-button"> <Link to={'/cart'}>View Cart</Link></button>
-                <button className="dialog-button"><Link to={'/checkout'}>Check out</Link></button>
+                <button className="dialog-button">
+                  <Link to={"/cart"}>View Cart</Link>
+                </button>
+                <button className="dialog-button">
+                  <Link to={"/checkout"}>Check out</Link>
+                </button>
                 <button className="dialog-button" onClick={closeModal}>
                   Continue Shopping
                 </button>

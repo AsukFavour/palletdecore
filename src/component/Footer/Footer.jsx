@@ -10,7 +10,7 @@ const Footer = () => {
         <h3 className="footer-section-title">Customer Care</h3>
         <ul className="footer-links">
           <li>
-            <a href="#">Customer@pallet.com</a>
+            <a href="mailto:info@palletdecore.com" >info@palletdecore.com</a>
           </li>
           <li>
             <a href="#">Customer@pallet.com</a>

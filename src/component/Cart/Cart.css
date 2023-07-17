@@ -41,10 +41,11 @@ td a .icon{
   width: 1.2rem;
   height: auto;
 }
+ td button:hover{
+  background-color: red;
+ }
 
-.icon:hover{
-  color: red;
-}
+
 
 .cart-item-image {
   max-width: 50px;

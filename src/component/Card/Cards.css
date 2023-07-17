@@ -5,6 +5,11 @@
   margin-top: 2rem;
 }
 
+.photo-card-container a{
+  text-decoration: none;
+  color: black;
+}
+
 .photo-card {
   display: flex;
   flex-direction: column;

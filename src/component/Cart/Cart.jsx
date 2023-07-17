@@ -3,8 +3,7 @@ import './Cart.css';
 import Navbar from '../TopNavbar/TopNavbar';
 import Footer from '../Footer/Footer';
 import { FiTrash } from 'react-icons/fi';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -57,7 +56,9 @@ const Cart = () => {
                   <td>{item.quantity}</td>
                   <td>${item.price * item.quantity}</td>
                   <td>
-                    <button onClick={() => handleDeleteItem(index)}><FiTrash className='icon'/></button>
+                    <button onClick={() => handleDeleteItem(index)}>
+                      <FiTrash className="icon" />
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -65,7 +66,9 @@ const Cart = () => {
           </table>
         </div>
         <div className="cart-total">Total: ${totalPrice}</div>
-        <Link to={"/checkout"} className="checkout-button">Checkout </Link>
+        <Link to={'/checkout'} className="checkout-button">
+          Checkout
+        </Link>
         {showModal && (
           <div className="modal">
             <div className="modal-content">
