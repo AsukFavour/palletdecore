@@ -100,9 +100,9 @@ const Item = () => {
             <button className="add-to-cart-button" onClick={addToCart}>
               Add to Cart
             </button>
-            <button className="pay-button">
+            {/* <button className="pay-button">
               <Link to={"/checkout"}>Check out</Link>
-            </button>
+            </button> */}
             <button className="details-toggle-button" onClick={toggleDetails}>
               {showDetails ? "Hide Details" : "Show Details"}
             </button>
