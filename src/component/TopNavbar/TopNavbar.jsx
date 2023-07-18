@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TopNavbar.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaSearch, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaBars, FaTimes,FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -66,16 +66,23 @@ function Navbar() {
       <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
         <div className="search-container">
           <form className="search-form" onSubmit={handleSearchSubmit}>
+          <label htmlFor="search" className='search-label'>Search</label>
             <input
-              type="text"
+
+              id="search"
+              type="search" 
+              pattern=".*\S.*"
+              required
+              placeholder='search lux'
+              autoComplete='off'
               className="search-input"
-              placeholder="Search"
               value={searchQuery}
               onChange={handleSearchInputChange}
             />
-            <button className="search-button">
+            <span className="caret"></span>
+            {/* <button className="search-button">
               <FaSearch />
-            </button>
+            </button> */}
           </form>
         </div>
         <div className="centered-links">
