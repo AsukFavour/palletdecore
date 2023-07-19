@@ -9,11 +9,24 @@ function Navbar() {
   const [innerDropdownOpen, setInnerDropdownOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [cartItemCount, setCartItemCount] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchCategories();
   }, []);
+
+  useEffect(() => {
+    // Calculate cart item count on component mount
+    updateCartItemCount();
+  }, []);
+
+  const updateCartItemCount = () => {
+    // Get cart items from localStorage and calculate the item count
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    setCartItemCount(itemCount);
+  };
 
   const fetchCategories = async () => {
     try {
@@ -66,12 +79,8 @@ function Navbar() {
       <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
         <div className="search-container">
           <form className="search-form" onSubmit={handleSearchSubmit}>
-          <label htmlFor="search" className='search-label'>Search</label>
             <input
-
-              id="search"
               type="search" 
-              pattern=".*\S.*"
               required
               placeholder='search lux'
               autoComplete='off'
@@ -79,10 +88,7 @@ function Navbar() {
               value={searchQuery}
               onChange={handleSearchInputChange}
             />
-            <span className="caret"></span>
-            {/* <button className="search-button">
-              <FaSearch />
-            </button> */}
+            <button className="search-button">Search</button>
           </form>
         </div>
         <div className="centered-links">
@@ -94,8 +100,10 @@ function Navbar() {
               className={`navbar__link navbar__link--dropdown ${innerDropdownOpen ? 'navbar__link--active' : ''}`}
               onClick={handleInnerDropdownToggle}
             >
+              <div className="">{innerDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}</div>
+              
               Product
-              {innerDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+              
             </Link>
             {innerDropdownOpen && (
               <div className="navbar__inner-dropdown-content">
@@ -117,9 +125,10 @@ function Navbar() {
             {/* <Link to={"/login"} className="button">
               Login
             </Link> */}
-            <Link to={'/cart'} className="button-89" role="button">
-              Cart
-            </Link>
+            <Link to={'/cart'} className="button-57" role="button">
+          <span>Cart</span>
+          {cartItemCount > 0 && <div className="cart-badge">{cartItemCount}</div>}
+          </Link>
           </div>
         </div>
       </div>

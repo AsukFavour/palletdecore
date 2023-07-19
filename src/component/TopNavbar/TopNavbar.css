@@ -31,140 +31,59 @@
   display: none;
 }
 
-.search-form,.search-input, .caret{
-  margin: auto;
-}
 
 .search-form {
   position: relative;
   width: 100%;
-	max-width: 17em;
-  height: 44px;
-}
-
-.search-input , .caret{
-  display: block;
-	transition: all calc(var(--dur) * 0.5) linear
-}
-
-.search-input {
-  background: transparent;
-	border-radius: 50%;
-	box-shadow: 0 0 0 0.15em inset;
-  caret-color: var(--primary);
-  -webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-
-  width: 2em;
-	height: 2em;
-
+  height: 40px;
+  background: #444;
+  background: rgba(0,0,0,.2);
+  border-radius:  3px;
+  border: 1px solid #fff;
+  display: flex;
   
-  font-size: 14px;
 }
-
-.search-input:focus, .search-input:valid {
-	background: var(--input);
-	border-radius: 0.25em;
-	box-shadow: none;
-	padding: 0.75em 1em;
-	transition-duration: calc(var(--dur) * 0.25);
-	transition-delay: calc(var(--dur) * 0.25);
-	width: 100%;
-	height: 3em;
-}
-
+.search-input {
+    width: 23.125rem;
+    padding: 10px 5px;
+    float: left;
+    color: #000000;
+    border: 0;
+    background: transparent;
+    border-radius: 3px 0 0 3px;
+    
+  }
 .search-input:focus {
-	animation: showCaret var(--dur) steps(1);
-	outline: transparent;
-}
+      outline: 0;
+      background:transparent;
+    }
 
-.search-input:focus + .caret, .search-input:valid + .caret {
-	animation: handleToCaret var(--dur) linear;
-	background: transparent;
-	width: 1px;
-	height: 1.5em;
-	transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
-}
-.Search-input::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
 
-.search-label {
-	color: #e3e4e8;
-	overflow: hidden;
-	position: absolute;
-	width: 0;
-	height: 0;
-}
+.search-button{
+      position: relative;
+      float: right;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      height: 40px;
+      width: 7.5rem;
+      color: #fff;
+      background: transparent;
+      border-left: 1px solid #fff;
+      border-radius: 0 3px 3px 0;
+      
+    }  
+    
+    .search-button:hover {
+        color:#444;
+      }
+      .search-button:active {
+        box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+      }
+      .search-button:focus {
+        outline: 0;
+      }
 
-.caret {
-	background: currentColor;
-	border-radius: 0 0 0.125em 0.125em;
-	margin-bottom: -0.6em;
-	width: 0.2em;
-	height: 0.6em;
-	transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
-	transform-origin: 50% 0;
-}
-
-/* Animations */
-@keyframes showCaret {
-	from {
-		caret-color: transparent;
-	}
-	to {
-		caret-color: var(--primary);
-	}
-}
-
-@keyframes handleToCaret {
-	from {
-		background: currentColor;
-		width: 0.25em;
-		height: 1em;
-		transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
-	}
-	25% {
-		background: currentColor;
-		width: 0.25em;
-		height: 1em;
-		transform: translate(0,-1em) rotate(-180deg) translate(0,0.875em);
-	}
-	50%, 62.5% {
-		background: var(--primary);
-		width: 1px;
-		height: 1.5em;
-		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,2.5em);
-	}
-	75%, 99% {
-		background: var(--primary);
-		width: 1px;
-		height: 1.5em;
-		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
-	}
-	87.5% {
-		background: var(--primary);
-		width: 1px;
-		height: 1.5em;
-		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,0.125em);
-	}
-	to {
-		background: transparent;
-		width: 1px;
-		height: 1.5em;
-		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
-	}
-}
-
-/* .search-button {
-  margin: 0 80px 0 0;
-  padding: 8px 12px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-} */
 
 .centered-links {
   display: flex;
@@ -189,45 +108,46 @@
   color: darkorange;
 }
 
-.user-actions .button-89 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
-  --color: #373B44;
-  
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 16px;
-
-  border: 0;
-
+.user-actions .button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: #18181a;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 10px 9px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  text-decoration: none;
-  color: #000;
-}
-.button-89:hover,
-.button-89:focus-visible{
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: .05em;
 }
 
-.button-89:active {
-  background: var(--color);
-  color: #fff;
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff4f4f; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navbar__dropdown {
   position: relative;
   display: inline-block;
+}
+
+.navbar__dropdown .navbar__link{
+  display: flex;
 }
 
 .navbar__dropdown-content {
@@ -278,7 +198,7 @@
   z-index: 200;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px)  {
   .navbar__toggle {
     display: block;
     background-color: transparent;
@@ -314,19 +234,28 @@
   .navbar__link {
     margin-right: 0;
     margin-bottom: 10px;
+    width: 95%;
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+    padding-right: 5%;
+    padding-bottom: 10px;
   }
 
   .centered-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
+    width: 100%;
+    margin-left: 0;
+    
   }
 
   
   .search-container {
     display: flex;
-    align-items: center;
     margin-bottom: 1rem;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
   }
   .search-form{
       display: flex;
@@ -334,37 +263,24 @@
     }
 
   .search-input {
-    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    width: 200px;
+    width: 85%;
   }
-
-  .caret{
-    height: 1em;
+  
+  .search-button{
+    width: 15%;
   }
-
-  /* .search-button {
-    margin-left: 10px;
-    margin-right: 0%;
-    padding: 5px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #333;
-    transition: color 0.3s ease;
-  }
-
-  .search-button:hover {
-    color: darkorange;
-  } */
 
   .navbar__dropdown {
     position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+  }
+
+  .navbar__dropdown .navbar__link{
+    justify-content: space-between;
   }
 
   .navbar__dropdown-content {
@@ -400,4 +316,183 @@
   .navbar__dropdown-item:hover {
     color: darkorange;
   }
+
+  .navbar__inner-dropdown-content{
+    left: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 300px;
+    top: 70%;
+  }
+
+  
 }
+
+/* Existing styles */
+
+/* Add a media query for mobile landscape view */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .navbar__links {
+    display: none; /* Hide the links by default in mobile landscape view */
+  }
+
+  .navbar__toggle {
+    display: block; /* Show the toggle button */
+  }
+
+  .navbar__links--open {
+    display: flex; /* Show the links when the toggle button is clicked */
+    flex-direction: column;
+    position: absolute;
+    top: 4.5rem;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -0.5rem 0 1rem rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    padding-top: 2rem;
+  }
+
+  .navbar__link {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-right: 0;
+    padding-bottom: 10px;
+  }
+
+  .centered-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .search-container {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .search-form {
+    display: flex;
+    padding: 0;
+    flex-direction: column; /* Adjust the form layout for mobile landscape */
+  }
+
+  .search-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%; /* Set the input width to 100% */
+  }
+
+  .search-button {
+    width: 100%; /* Set the button width to 100% */
+    margin-top: 10px;
+  }
+
+  .navbar__dropdown {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .navbar__dropdown .navbar__link {
+    justify-content: space-between;
+  }
+
+  .navbar__dropdown-content {
+    position: absolute;
+    top: 4.5rem; /* Adjust the dropdown position */
+    right: 0;
+    width: 100%; /* Set the dropdown width to 100% */
+    background-color: #fff;
+    box-shadow: -0.5rem 0 1rem rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 200;
+    visibility: hidden; /* Hide the dropdown by default */
+  }
+
+  .navbar__dropdown-content.active {
+    visibility: visible; /* Show the dropdown when active */
+  }
+
+  .navbar__dropdown-item {
+    flex-basis: calc(50% - 0.5rem);
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center; /* Center align the dropdown items */
+  }
+
+  .navbar__inner-dropdown-content {
+    left: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%; /* Set the inner dropdown width to 100% */
+    top: 4.5rem; /* Adjust the inner dropdown position */
+  }
+}
+
+
+
+/* Add a media query for mobile landscape view */
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  /* Adjust the logo size for mobile landscape */
+  .logo {
+    font-size: 20px;
+  }
+
+  /* Adjust the search input width for mobile landscape */
+  .search-input {
+    width: 15rem;
+  }
+
+  /* Adjust the search button width for mobile landscape */
+  .search-button {
+    width: 5rem;
+  }
+  .navbar__link{
+    margin-right: 0.5rem;
+  }
+  /* Move the cart badge above the cart button for mobile landscape */
+  .cart-badge {
+    top: -10px;
+    right: -10px;
+  }
+
+  /* Center the links in mobile landscape */
+  .centered-links {
+    justify-content: center;
+  }
+
+  /* Hide the dropdown content by default in mobile landscape */
+  .navbar__dropdown-content {
+    display: none;
+  }
+
+  /* Show the dropdown content when active in mobile landscape */
+  .navbar__dropdown-content.active {
+    display: block;
+  }
+
+  /* Adjust the position of the inner dropdown for mobile landscape */
+  .navbar__inner-dropdown-content {
+    top: 100%;
+    left: -5px; /* Add a slight offset to align with the parent dropdown */
+    width: 150px;
+  }
+}
+
+

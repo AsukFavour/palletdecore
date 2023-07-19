@@ -85,7 +85,7 @@ const Item = () => {
         </div>
         <div className="item-details">
           <h1 className="item-name">{selectedItem.name}</h1>
-          <p className="item-description">{`$${selectedItem.price} USD`}</p>
+          <p className="item-description">{`₦${selectedItem.price} NGN`}</p>
           <p className="item-description">Item Description</p>
           <div className="item-quantity">
             <input

@@ -122,7 +122,7 @@ function Checkout() {
           <div className="shipping-info-button" onClick={handleShowShippingInfo}>
             <FiInfo className="info-icon" />
           </div>
-          <div className="shipping-info-dialog" style={{ display: showShippingInfo ? 'block' : 'none' }}>
+          <div className="shipping-info-dialog" style={{ display: showShippingInfo ? 'block' : "none" }}>
             <div className="shipping-info-dialog-content">
               <h2>Shipping Information</h2>
               <p>
@@ -135,7 +135,7 @@ function Checkout() {
               </button>
             </div>
           </div>
-          <div className="checkout-total">Total: ${totalPrice}</div>
+          <div className="checkout-total">Total: ₦{totalPrice}</div>
         </div>
 
         <div className="checkout-summary">
@@ -170,6 +170,7 @@ function Checkout() {
                 reference={`checkout-${Date.now()}`}
                 email={email}
                 amount={totalPrice * 100} // Paystack amount is in kobo (multiplying by 100)
+                name ={name}
                 publicKey={publicKey}
                 tag="button"
               />
