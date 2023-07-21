@@ -105,6 +105,33 @@ td a .icon{
   margin: 0 10px;
 }
 
+/* Empty Cart Styles */
+.empty-cart {
+  text-align: center;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  min-height: 200px; 
+}
+
+.empty-cart p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.browse-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .cart-table-container {
@@ -114,5 +141,15 @@ td a .icon{
 
   .cart-table {
     width: auto;
+  }
+
+  .empty-cart {
+    padding: 20px;
+    font-size: 14px;
+    min-height: 180px;
+  }
+
+  .empty-cart p {
+    font-size: 16px;
   }
 }

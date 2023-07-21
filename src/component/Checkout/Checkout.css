@@ -77,9 +77,24 @@ button {
   text-decoration: none;
 }
 
-.direction-icon {
+/* Success message */
+.success-message {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
   margin-top: 1rem;
 }
+
+/* Error message */
+.error-message {
+  background-color: #f44336;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {

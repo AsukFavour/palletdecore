@@ -15,6 +15,8 @@ function Checkout() {
   const [cartItems, setCartItems] = useState([]);
   const [showShippingInfo, setShowShippingInfo] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [paymentError, setPaymentError] = useState(false);
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -54,6 +56,27 @@ function Checkout() {
     event.preventDefault();
     // Perform checkout logic, e.g., submit form data to server for processing
     // You can access the form values using the state variables (name, email, address, etc.)
+
+    // Simulating successful payment (you can replace this with your actual payment processing logic)
+    // Assuming the payment was successful, display success message and clear cart and form
+  
+  }
+
+  function handlePaymentError(error) {
+    // Handle payment error here (optional)
+    console.log('Payment error:', error);
+    setPaymentError(true); // Display error message (you can use this state to conditionally render an error message)
+  }
+
+  function clearCartItemsAndForm() {
+    localStorage.removeItem('cartItems');
+    setCartItems([]);
+    setName('');
+    setEmail('');
+    setAddress('');
+    setCity('');
+    setState('');
+    setZip('');
   }
 
   const subTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -82,17 +105,15 @@ function Checkout() {
       `Your purchase was successful! Transaction reference: ${response}`
     );
     console.log('Payment successful', response);
-    clearCartItems();
+    clearCartItemsAndForm();
+    setPaymentSuccess(true); 
   };
 
   const handlePaymentClose = () => {
     // Handle payment modal close here
+    alert('you closed the payment');
     console.log('Payment modal closed');
-  };
-
-  const clearCartItems = () => {
-    localStorage.removeItem('cartItems');
-    setCartItems([]);
+    setPaymentError(true);
   };
 
   const publicKey = 'pk_test_0be6555dbb4da8bb761c496e7defb91276740681';
@@ -163,7 +184,8 @@ function Checkout() {
               <PaystackButton
                 text="Pay"
                 className="pay-button"
-                callback={handlePaymentSuccess}
+                onSuccess ={handlePaymentSuccess}
+                onError={handlePaymentError} // Handle payment error
                 onClose={handlePaymentClose}
                 disabled={!isFormValid} // Disable button if any field is empty
                 embed={true}
@@ -179,6 +201,16 @@ function Checkout() {
               </div>
             </div>
           </form>
+          {paymentSuccess && (
+          <div className="success-message">
+            Your payment was successful! Details about your order should be displayed here.
+          </div>
+        )}
+        {paymentError && (
+          <div className="error-message">
+            There was an error processing your payment. Please try again later.
+          </div>
+        )}
         </div>
       </div>
     </>
