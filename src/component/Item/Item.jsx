@@ -4,6 +4,9 @@ import "./Item.css";
 import Navbar from "../TopNavbar/TopNavbar";
 import Footer from "../Footer/Footer";
 import image from "../../assets/sofa.png";
+import Slider from "react-slick"; 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Link, useParams } from "react-router-dom";
 
 const Item = () => {
@@ -18,6 +21,14 @@ const Item = () => {
 
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Show 3 items at a time
+    slidesToScroll: 1,
   };
 
   const youMightLikeData = [
@@ -117,19 +128,23 @@ const Item = () => {
       </div>
       <div className="you-might-like-section">
         <h2>You Might Like</h2>
-        <div className="you-might-like-cards">
-          {youMightLikeData.map((item) => (
-            <div className="card" key={item.id}>
-              <img src={item.image} alt={item.name} className="card-image" />
-              <div className="card-overlay">
-                <div className="card-details">
-                  {/* <p className="card-name">{item.name}</p> */}
-                  {/* <p className="card-price">{`$${item.price}`}</p> */}
-                </div>
-              </div>
-            </div>
-          ))}
+        
+        <Slider {...carouselSettings}>
+  {youMightLikeData.map((item) => (
+    <div key={item.id}>
+      <div className="card">
+        <img src={item.image} alt={item.name} className="card-image" />
+        <div className="card-overlay">
+          <div className="card-details">
+            {/* Your card content here */}
+          </div>
         </div>
+      </div>
+    </div>
+  ))}
+</Slider>
+
+        
       </div>
       {showModal && (
         <div className="modal">

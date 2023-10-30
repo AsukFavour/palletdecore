@@ -87,6 +87,7 @@
   .you-might-like-section {
     margin-top: 40px;
     width: 100%;
+    text-align: center;
 
   }
 
@@ -101,6 +102,23 @@
     margin: 0 25px;
   }
   
+  /* Style the carousel items */
+.slick-slide {
+  transition: transform 0.3s ease;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.slick-slide:hover {
+  transform: scale(1.05); /* Enlarge the card on hover */
+}
   .card {
     position: relative;
     overflow: hidden;
@@ -239,7 +257,7 @@
     .add-to-cart-button,
     .pay-button,
     .details-toggle-button {
-      width: 330px;
+      width: 100%;
       margin-right: 0;
       margin-bottom: 10px;
     }
