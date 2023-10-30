@@ -87,6 +87,11 @@
   .you-might-like-section {
     margin-top: 40px;
     width: 100%;
+
+  }
+
+  .you-might-like-section h2{
+    align-items: center;
   }
   
   .you-might-like-cards {
