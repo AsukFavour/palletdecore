@@ -23,6 +23,7 @@
     max-width: 100%;
     align-items: center;
     text-align: center;
+    padding: 0.5rem;
 
   }
   
@@ -31,17 +32,19 @@
     .special {
       flex-direction: row;
       align-items: flex-start;
+      padding: 2rem;
     }
   
     .special-header {
       width: 100%;
-     margin: 0 5rem;
+     margin: 0 3rem;
       align-items: center;
     }
   
     .special-content {
       max-width: 50%;
       margin-top: 20%;
+      margin: 20% 2rem 0 2rem ;
     }
 
   }
@@ -49,12 +52,12 @@
   /* Laptop/desktop styles */
   @media (min-width: 1024px) {
     .special-header {
-      width: 50%;
-      margin: 3.5rem;
+      width: 60%;
     }
   
     .special-content {
       max-width: 40%;
+      margin-top: 15%;
     }
 
     .special-header img {

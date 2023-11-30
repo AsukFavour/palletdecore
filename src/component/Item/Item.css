@@ -86,8 +86,10 @@
   
   .you-might-like-section {
     margin-top: 40px;
+    margin-bottom: 30px;
     width: 100%;
     text-align: center;
+    margin: 40px 20px 30px 20px;
 
   }
 
@@ -95,12 +97,6 @@
     align-items: center;
   }
   
-  .you-might-like-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    margin: 0 25px;
-  }
   
   /* Style the carousel items */
 .slick-slide {
@@ -120,8 +116,8 @@
   transform: scale(1.05); /* Enlarge the card on hover */
 }
   .card {
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
     width: 280px;
   }
   
@@ -129,6 +125,7 @@
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
+    
   }
   
   .card:hover .card-image {
@@ -261,11 +258,6 @@
       margin-right: 0;
       margin-bottom: 10px;
     }
-
-    .you-might-like-cards {
-        grid-template-columns: repeat(4, 1fr);
-        margin: 0 10px;
-      }
 
     .card{
         width: 80px;
