@@ -116,6 +116,7 @@ function Checkout() {
     setPaymentError(true);
   };
 
+  //remember to put the main key in an env file and import
   const publicKey = 'pk_test_0be6555dbb4da8bb761c496e7defb91276740681';
 
   return (
@@ -163,19 +164,19 @@ function Checkout() {
           <h3>Shipping Information</h3>
           <form className="checkout-form" onSubmit={handleSubmit}>
             <div className="form-row">
-              <input type="text" id="name" value={name} onChange={handleNameChange} placeholder="Name:" />
+              <input type="text" id="name" value={name} onChange={handleNameChange} placeholder="Name:"  required/>
             </div>
             <div className="form-row">
-              <input type="email" id="email" value={email} onChange={handleEmailChange} placeholder="Email:" />
+              <input type="email" id="email" value={email} onChange={handleEmailChange} placeholder="Email:" required/>
             </div>
             <div className="form-row">
-              <input type="text" id="address" value={address} onChange={handleAddressChange} placeholder="Address:" />
+              <input type="text" id="address" value={address} onChange={handleAddressChange} placeholder="Address:" required/>
             </div>
             <div className="form-row">
-              <input type="text" id="city" value={city} onChange={handleCityChange} placeholder="City:" />
+              <input type="text" id="city" value={city} onChange={handleCityChange} placeholder="City:" required/>
             </div>
             <div className="form-row">
-              <input type="text" id="state" value={state} onChange={handleStateChange} placeholder="State:" />
+              <input type="text" id="state" value={state} onChange={handleStateChange} placeholder="State:" required/>
             </div>
             <div className="form-row">
               <input type="text" id="zip" value={zip} onChange={handleZipChange} placeholder="ZIP:" />

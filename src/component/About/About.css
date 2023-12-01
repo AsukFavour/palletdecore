@@ -1,51 +1,74 @@
+/* Responsive styles for About component */
+
 /* Mobile styles */
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  width: 70%;
+  margin: auto;
+}
+
+.about-header {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.about-header img {
+  max-width: 100%;
+  height: auto; /* Ensure images maintain their aspect ratio */
+}
+
+.about-content {
+  max-width: 100%;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 75%;
+    margin-top: 9rem;
   }
-  
+
   .about-header {
-    width: 100%;
-    margin-bottom: 1rem;
+    width: 50%;
+    margin-right: 2rem;
+    margin-bottom: 0;
   }
-  
+
   .about-header img {
-    max-width: 100%;
+    width: 600px; /* Make image take full width on tablets */
+    height: 600px; /* Adjusted height for tablets */
+    margin: auto; /* Center the image */
   }
-  
+
   .about-content {
-    max-width: 90%;
+    width: 50%;
   }
-  
-  /* Tablet styles */
-  @media (min-width: 768px) {
-    .about {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  
-    .about-header {
-      width: 40%;
-      margin-right: 2rem;
-      margin-bottom: 0;
-    }
-  
-    .about-content {
-      max-width: 50%;
-    }
+}
+
+/* Laptop/desktop styles */
+@media (min-width: 1024px) {
+.about{
+  height: 60%;
+  margin-top: 9rem;
+}
+
+  .about-header {
+    width: 50%;
+    margin-right: 4rem;
   }
-  
-  /* Laptop/desktop styles */
-  @media (min-width: 1024px) {
-    .about-header {
-      width: 50%;
-      margin-right: 4rem;
-    }
-  
-    .about-content {
-      max-width: 40%;
-    }
+
+  .about-header img {
+    width: 100%; /* Make image take full width on big screens */
+    height: 500px; /* Adjusted height for big screens */
+    margin: auto; /* Center the image */
   }
-  
+
+  .about-content {
+    max-width: 50%;
+  }
+}
