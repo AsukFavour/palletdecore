@@ -131,15 +131,12 @@ const Item = () => {
         
         <Slider {...carouselSettings}>
   {youMightLikeData.map((item) => (
-    <div key={item.id}>
-      <div className="card">
+    <div key={item.id} className="card">
+      
         <img src={item.image} alt={item.name} className="card-image" />
         <div className="card-overlay">
-          <div className="card-details">
-            {/* Your card content here */}
-          </div>
         </div>
-      </div>
+      
     </div>
   ))}
 </Slider>
