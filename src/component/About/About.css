@@ -1,51 +1,52 @@
-/* Mobile styles */
-.about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Raleway', sans-serif;
+/* AboutUs.css */
+
+/* Styles for About Us page */
+
+/* Adjustments for About Us content */
+.about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 50px auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.image-jumbotron {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.jumbotron-image {
+  width: 100%;
+  height: auto;
+}
+
+.about-content {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.images-collage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+}
+
+.about-image {
+  width: calc(50% - 10px); /* Adjust image width for two images with margin */
+  margin: 5px;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+  .about-image {
+    width: 100%; /* Full width for single image on smaller screens */
+    margin: 10px 0;
   }
-  
-  .about-header {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .about-header img {
-    max-width: 100%;
-  }
-  
-  .about-content {
-    max-width: 90%;
-  }
-  
-  /* Tablet styles */
-  @media (min-width: 768px) {
-    .about {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  
-    .about-header {
-      width: 40%;
-      margin-right: 2rem;
-      margin-bottom: 0;
-    }
-  
-    .about-content {
-      max-width: 50%;
-    }
-  }
-  
-  /* Laptop/desktop styles */
-  @media (min-width: 1024px) {
-    .about-header {
-      width: 50%;
-      margin-right: 4rem;
-    }
-  
-    .about-content {
-      max-width: 40%;
-    }
-  }
-  
+}

@@ -44,7 +44,7 @@
   
 }
 .search-input {
-    width: 23.125rem;
+    
     padding: 10px 5px;
     float: left;
     color: #000000;
@@ -458,7 +458,7 @@
 
   /* Adjust the search input width for mobile landscape */
   .search-input {
-    width: 15rem;
+    width: 10rem;
   }
 
   /* Adjust the search button width for mobile landscape */

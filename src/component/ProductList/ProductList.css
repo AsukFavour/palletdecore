@@ -34,13 +34,12 @@
 
   .product-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     justify-items: center;
   }
   
   .product-link .product-card {
-    border: 1px solid #ddd;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -54,7 +53,7 @@
   
   .product-link .product-image {
     width: 100%;
-    height: 200px;
+    height: 350px;
     overflow: hidden;
     position: relative;
   }
@@ -103,7 +102,7 @@
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
     .product-cards {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
   }
   
