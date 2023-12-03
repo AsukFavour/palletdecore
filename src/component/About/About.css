@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* AboutUs.css */
 
 /* Styles for About Us page */
@@ -49,4 +50,79 @@
     width: 100%; /* Full width for single image on smaller screens */
     margin: 10px 0;
   }
+=======
+/* Responsive styles for About component */
+
+/* Mobile styles */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  width: 70%;
+  margin: auto;
+}
+
+.about-header {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.about-header img {
+  max-width: 100%;
+  height: auto; /* Ensure images maintain their aspect ratio */
+}
+
+.about-content {
+  max-width: 100%;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 75%;
+    margin-top: 9rem;
+  }
+
+  .about-header {
+    width: 50%;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .about-header img {
+    width: 600px; /* Make image take full width on tablets */
+    height: 600px; /* Adjusted height for tablets */
+    margin: auto; /* Center the image */
+  }
+
+  .about-content {
+    width: 50%;
+  }
+}
+
+/* Laptop/desktop styles */
+@media (min-width: 1024px) {
+.about{
+  height: 60%;
+  margin-top: 9rem;
+}
+
+  .about-header {
+    width: 50%;
+    margin-right: 4rem;
+  }
+
+  .about-header img {
+    width: 100%; /* Make image take full width on big screens */
+    height: 500px; /* Adjusted height for big screens */
+    margin: auto; /* Center the image */
+  }
+
+  .about-content {
+    max-width: 50%;
+  }
+>>>>>>> 3cb0721f4ec827f50604d4fda1e439329086e80e
 }

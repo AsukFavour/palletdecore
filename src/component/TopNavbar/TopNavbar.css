@@ -44,7 +44,11 @@
   
 }
 .search-input {
+<<<<<<< HEAD
     
+=======
+    width: 22.125rem;
+>>>>>>> 3cb0721f4ec827f50604d4fda1e439329086e80e
     padding: 10px 5px;
     float: left;
     color: #000000;
@@ -267,7 +271,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    width: 85%;
+    width: 80%;
   }
   
   .search-button{
@@ -458,7 +462,11 @@
 
   /* Adjust the search input width for mobile landscape */
   .search-input {
+<<<<<<< HEAD
     width: 10rem;
+=======
+    width: 14rem;
+>>>>>>> 3cb0721f4ec827f50604d4fda1e439329086e80e
   }
 
   /* Adjust the search button width for mobile landscape */
